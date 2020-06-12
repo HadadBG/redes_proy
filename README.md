@@ -1,1 +1,1 @@
-Proyecto de la materia de redes para realizar una pagina que administre la red.
+Proyecto de la materia de redes para realizar una pagina que administre la red
