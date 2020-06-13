@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn_magico">Boton Magico</button>
+    <div id="resultado" style="white-space: pre-line;"></div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        $(function() {
+          $('#btn_magico').bind('click', function() {
+            $.getJSON('/background_process_test',{},
+                function(data) {
+                $("#resultado").text(data.resultado)
+            });
+            return false;
+          });
+        });
+</script>
+</body>
+</html>
