@@ -1,0 +1,54 @@
+main {
+  background-color: #354f52;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.login {
+  grid-row: span 2 / auto;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+}
+
+.head-title {
+  padding-left: 10%;
+}
+
+.image-container {
+  padding: 1%;
+}
+
+.card {
+  height: 500px;
+  border-radius: 10px;
+  background-color: #52796F;
+}
+
+.main-image {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.second-image {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-size: 5vw;
+  color: #cad2c5;
+}
+
+.nav-wrapper {
+  padding-left: 2%;
+}

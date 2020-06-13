@@ -1,0 +1,24 @@
+body {
+  background-color: #cad2c5;
+}
+
+.nav-wrapper {
+  padding-left: 2%;
+}
+
+.page-footer {
+  background-color: #354f52;
+}
+
+.conf-container {
+  margin: auto;
+  padding: 1%;
+  width: 80%;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+main{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
