@@ -3,6 +3,8 @@ sys.path.append('scripts')
 from get_conf import get_conf
 from flask import Flask, render_template, jsonify, send_from_directory,request
 from conf_dns import conf_dns
+from conf_dhcp import conf_dhcp
+
 app = Flask(__name__, static_url_path='',template_folder='templates/views/')
 ###Routes
 @app.route('/')
@@ -39,7 +41,7 @@ def set_dns():
 @app.route('/set_dhcp', methods=['GET','POST'])
 def set_dhcp():
     request_json=request.get_json(force=True)
-   
+    conf_dhcp(request_json)
     return jsonify(resultado=request_json)
 
 ###Statics        

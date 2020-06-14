@@ -180,11 +180,11 @@ $(function() {
             "hosts": {
               "192.168.1.4": {
                 "MAC": "8e:95:62:fa:e2:0d",
-                "Nombre": "Anfitrion"
+                "nombre": "Anfitrion"
               },
           "192.168.3.3": {
                 "MAC": "08:00:27:51:ce:c1",
-                "Nombre": "dns_secundario"
+                "nombre": "dns_secundario"
               }
             }
           }
