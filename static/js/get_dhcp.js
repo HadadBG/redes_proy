@@ -7,11 +7,13 @@ $(document).ready(function () {
         }
     });
 
+    // Delete subnet
     $("body").delegate(".remBtn", "click", function () {
         var parent_id = $(this).parent().parent();
         parent_id.remove()
     });
 
+    // Add subnet
     $('.addBtn').on('click', function () {
         var parent_id = $(this).parent().parent().parent();
         var ch = $(parent_id).children();
@@ -67,7 +69,7 @@ $(document).ready(function () {
             type: "text",
             value: "xxxx.xxxx.xxxx.xxxx",
             id: "ip-start" + num,
-            class: "validate"
+            class: "ip"
         })
         //Label
         var label = document.createElement("label");
@@ -108,7 +110,7 @@ $(document).ready(function () {
             type: "text",
             value: "xxxx.xxxx.xxxx.xxxx",
             id: "ip-end" + num,
-            class: "validate"
+            class: "ip"
         })
         //Label
         var label = document.createElement("label");
@@ -139,5 +141,20 @@ $(document).ready(function () {
         $(parent_id).append(newLi);
         //alert(num);
     })
+
+    //Edit ip range
+    $("body").delegate(".my-btn", "click", function () {
+        var parent_id = $(this).parent();
+        var inputField = $(parent_id).children(".input-field");
+        var input = $(inputField).children("input");
+        $(input).removeAttr("disabled");
+    });
+
+    //Confirm ip range
+    $("body").delegate(".ip", "keypress", function (e) {
+        if (e.keyCode == 13) {
+            $(this).attr("disabled", "");
+        }
+    });
 });
 
