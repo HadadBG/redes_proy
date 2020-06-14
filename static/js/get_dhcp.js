@@ -158,3 +158,48 @@ $(document).ready(function () {
     });
 });
 
+
+$(function() {
+    $('#btn_sv_dhcp').bind('click', function() {
+        
+        dummy_json={
+            "subnets": {
+              "192.168.1.0": {
+                "netmask": "255.255.255.0",
+                "router": "192.168.1.254",
+                "subnet-ini": "192.168.1.10",
+                "subnet-fin": "192.168.1.100"
+              },
+              "192.168.2.0": {
+                "netmask": "255.255.255.0",
+                "router": "192.168.2.254",
+                "subnet-ini": "192.168.2.10",
+                "subnet-fin": "192.168.2.100"
+              }
+            },
+            "hosts": {
+              "192.168.1.4": {
+                "MAC": "8e:95:62:fa:e2:0d",
+                "Nombre": "Anfitrion"
+              },
+          "192.168.3.3": {
+                "MAC": "08:00:27:51:ce:c1",
+                "Nombre": "dns_secundario"
+              }
+            }
+          }
+        //alert("Saludos")
+        $.ajax({
+            dataType: "json",
+            url: "/set_dhcp",
+            data: JSON.stringify(dummy_json),
+            success: function(data){
+                alert(JSON.stringify(data));
+            },
+            processData: false,
+            method:"POST"
+          });
+      return false;
+    });
+  });
+ 

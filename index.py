@@ -35,6 +35,13 @@ def set_dns():
         conf_dns(res)
         return jsonify(resultado="Dns establecido Correctamente")
 
+
+@app.route('/set_dhcp', methods=['GET','POST'])
+def set_dhcp():
+    request_json=request.get_json(force=True)
+   
+    return jsonify(resultado=request_json)
+
 ###Statics        
 @app.route('/js/<path:path>')
 def send_js(path):
@@ -42,6 +49,5 @@ def send_js(path):
 @app.route('/css/<path:path>')
 def send_css(path):
     return send_from_directory('static/css', path)
-
 if __name__ == '__main__':
       app.run(host='192.168.1.4', port=80)
