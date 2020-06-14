@@ -22,3 +22,33 @@ main{
     margin-top: 2.5%;
     margin-bottom: 2.5%;
 }
+
+.my-collection{
+  display: flex;
+  align-items: center;
+}
+
+.my-colapsible{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-add{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-btn{
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.my-btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border-radius: 5px;
+}
+
