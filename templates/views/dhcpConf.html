@@ -7,7 +7,7 @@
     <link
       type="text/css"
       rel="stylesheet"
-      href="../css/materialize.css"
+      href="css/materialize.css"
       media="screen,projection"
     />
     <link
@@ -29,65 +29,24 @@
       <div class="conf-container">
         <h4>Configuración DHCP</h4>
         <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input
-                  placeholder="Placeholder"
-                  id="first_name"
-                  type="text"
-                  class="validate"
-                />
-                <label for="first_name" class="active">First Name</label>
-              </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate" />
-                <label for="last_name" class="active">Last Name</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  disabled
-                  value="I am not editable"
-                  id="disabled"
-                  type="text"
-                  class="validate"
-                />
-                <label for="disabled" class="active">Disabled</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate" />
-                <label for="password" class="active">Password</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate" />
-                <label for="email" class="active">Email</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12">
-                This is an inline input field:
-                <div class="input-field inline">
-                  <input id="email_inline" type="email" class="validate" />
-                  <label for="email_inline" class="active">Email</label>
-                  <span
-                    class="helper-text"
-                    data-error="wrong"
-                    data-success="right"
-                    >Helper text</span
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
+          <ul class="collapsible">
+            <li value="1">
+              <div class="collapsible-header"><i class="material-icons">settings_input_component</i>192.168.1.254</div>
+              <div class="collapsible-body"><span>Rangos de Ips,Router,netmask,subnet</span></div>
+            </li>
+            <li value="2">
+              <div class="collapsible-header"><i class="material-icons">settings_input_component</i>192.168.2.254</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li value="3">
+              <div class="collapsible-header"><i class="material-icons">settings_input_component</i>192.168.3.254</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+          </ul>
         </div>
       </div>
     </main>
+    
 
     <footer class="page-footer">
       <div class="container">
@@ -126,5 +85,11 @@
         </div>
       </div>
     </footer>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/get_dhcp.js"></script>
+
+  
+
   </body>
 </html>
