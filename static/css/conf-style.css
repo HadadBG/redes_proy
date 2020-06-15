@@ -18,37 +18,49 @@ body {
   border-radius: 10px;
 }
 
-main{
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+main {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
-.my-collection{
+.my-collection {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
-.my-colapsible{
+.my-colapsible {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.my-add{
+.my-add {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.my-btn{
+.my-btn {
   border: none;
   background-color: transparent;
   border-radius: 5px;
 }
 
 .my-btn:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #4caf50; /* Green */
   color: white;
   border-radius: 5px;
 }
 
+.my-btnR {
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.my-btnR:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+  border-radius: 5px;
+}
