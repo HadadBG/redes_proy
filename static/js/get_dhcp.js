@@ -1,5 +1,9 @@
+var hostClicks = 0;
+var subnetClicks = 0;
 
 $(document).ready(function () {
+  hostClicks = $(document).children("typeH").length;
+  subnetClicks = $(document).children("typeS").length;
 
   $('.collapsible').collapsible({
     onOpenEnd: function (arg) {
@@ -15,14 +19,208 @@ $(document).ready(function () {
 
   //Add Host
   $(".addHBtn").on("click", function () {
+    hostClicks++;
+    var parent_id = $(this).parent().parent().parent();
+    var num = hostClicks;
+    //New li element
+    var newLi = document.createElement("li")
+
+    //Header
+    var liDivHeader = document.createElement("div")
+    $(liDivHeader).addClass("collapsible-header my-colapsible");
+
+    //Right icon
+    var iconCont = document.createElement("i");
+    $(iconCont).addClass("material-icons");
+    $(iconCont).text("settings_input_component");
+    $(liDivHeader).append(iconCont);
+
+    //Paragraph
+    var par = document.createElement("p");
+    $(par).attr("id", "host" + num);
+    $(par).text("Host: vm" + num);
+    $(liDivHeader).append(par);
+
+    //"Remove" Button
+    var remBtn = document.createElement("a");
+    $(remBtn).addClass("waves-effect red btn-small remBtn");
+    $(remBtn).attr("id", "typeH");
+    var remBtnIcon = document.createElement("i");
+    $(remBtnIcon).addClass("material-icons right");
+    $(remBtnIcon).text("cancel");
+    $(remBtn).append(remBtnIcon);
+    $(liDivHeader).append(remBtn);
+
+    //Body
+    var liDivBody = document.createElement("div");
+    $(liDivBody).addClass("collapsible-body");
+    //Collection
+    var collection = document.createElement("ul");
+    $(collection).addClass("collection");
+    $(liDivBody).append(collection);
+
+    //Collectiion-item
+    var collItem = document.createElement("li");
+    $(collItem).addClass("collection-item");
+    //Collection-div
+    var collDiv = document.createElement("div");
+    $(collDiv).addClass("my-collection");
+    //InputField
+    var inputField = document.createElement("div");
+    $(inputField).addClass("input-field");
+    //Input
+    var input = document.createElement("input");
+    $(input).attr({
+      disabled: "",
+      type: "text",
+      value: "xx:xx:xx:xx:xx:xx",
+      id: "mac" + num,
+      class: "ip"
+    })
+    //Label
+    var label = document.createElement("label");
+    $(label).attr({
+      for: "mac" + num,
+      class: "active"
+    })
+    $(label).text("Dirección MAC:");
+    //Button
+    var editBtn = document.createElement("button");
+    $(editBtn).addClass("secondary-content my-btn");
+    //Button-icon
+    var btnIcon = document.createElement("i");
+    $(btnIcon).addClass("material-icons");
+    $(btnIcon).text("create");
+    $(editBtn).append(btnIcon);
+
+    $(inputField).append(input);
+    $(inputField).append(label);
+    $(collDiv).append(inputField);
+    $(collDiv).append(editBtn);
+
+    //InputFieldR
+    var inputField = document.createElement("div");
+    $(inputField).addClass("input-field");
+    //InputR
+    var input = document.createElement("input");
+    $(input).attr({
+      disabled: "",
+      type: "text",
+      value: "xxxx.xxxx.xxxx.xxxx",
+      id: "hostRouter" + num,
+      class: "ip"
+    })
+    //LabelR
+    var label = document.createElement("label");
+    $(label).attr({
+      for: "hostRouter" + num,
+      class: "active"
+    })
+    $(label).text("Router:");
+    //ButtonR
+    var editBtn = document.createElement("button");
+    $(editBtn).addClass("secondary-content my-btnR");
+    //Button-iconR
+    var btnIcon = document.createElement("i");
+    $(btnIcon).addClass("material-icons");
+    $(btnIcon).text("create");
+    $(editBtn).append(btnIcon);
+
+    $(inputField).append(input);
+    $(inputField).append(label);
+    $(collDiv).append(inputField);
+    $(collDiv).append(editBtn);
+
+    $(collItem).append(collDiv);
+    $(collection).append(collItem);
+
+    //Collectiion-item
+    var collItem = document.createElement("li");
+    $(collItem).addClass("collection-item");
+    //Collection-div
+    var collDiv = document.createElement("div");
+    $(collDiv).addClass("my-collection");
+    //InputField
+    var inputField = document.createElement("div");
+    $(inputField).addClass("input-field");
+    //Input
+    var input = document.createElement("input");
+    $(input).attr({
+      disabled: "",
+      type: "text",
+      value: "xxxx.xxxx.xxxx.xxxx",
+      id: "ipFixed" + num,
+      class: "ip"
+    })
+    //Label
+    var label = document.createElement("label");
+    $(label).attr({
+      for: "ipFixed" + num,
+      class: "active"
+    })
+    $(label).text("Dirección IP Fija:");
+    //Button
+    var editBtn = document.createElement("button");
+    $(editBtn).addClass("secondary-content my-btn");
+    //Button-icon
+    var btnIcon = document.createElement("i");
+    $(btnIcon).addClass("material-icons");
+    $(btnIcon).text("create");
+    $(editBtn).append(btnIcon);
+
+    $(inputField).append(input);
+    $(inputField).append(label);
+    $(collDiv).append(inputField);
+    $(collDiv).append(editBtn);
+
+    //InputFieldSN
+    var inputField = document.createElement("div");
+    $(inputField).addClass("input-field");
+    //InputSN
+    var input = document.createElement("input");
+    $(input).attr({
+      disabled: "",
+      type: "text",
+      value: "xxxx.xxxx.xxxx.xxxx",
+      id: "hostSNMask" + num,
+      class: "ip"
+    })
+    //LabelSN
+    var label = document.createElement("label");
+    $(label).attr({
+      for: "hostSNMask" + num,
+      class: "active"
+    })
+    $(label).text("Máscara de Subred:");
+    //ButtonSN
+    var editBtn = document.createElement("button");
+    $(editBtn).addClass("secondary-content my-btnR");
+    //Button-iconSN
+    var btnIcon = document.createElement("i");
+    $(btnIcon).addClass("material-icons");
+    $(btnIcon).text("create");
+    $(editBtn).append(btnIcon);
+
+    $(inputField).append(input);
+    $(inputField).append(label);
+    $(collDiv).append(inputField);
+    $(collDiv).append(editBtn);
+
+    $(collItem).append(collDiv);
+    $(collection).append(collItem);
+
+
+    $(newLi).append(liDivHeader);
+    $(newLi).append(liDivBody);
+    $(parent_id).append(newLi);
 
   })
-  
+
   // Add subnet
   $('.addBtn').on('click', function () {
+    subnetClicks++;
     var parent_id = $(this).parent().parent().parent();
-    var ch = $(parent_id).children();
-    var num = ch.length;
+    var num = subnetClicks;
     //New li element
     var newLi = document.createElement("li")
 
@@ -45,6 +243,7 @@ $(document).ready(function () {
     //"Remove" Button
     var remBtn = document.createElement("a");
     $(remBtn).addClass("waves-effect red btn-small remBtn");
+    $(remBtn).attr("id", "typeS");
     var remBtnIcon = document.createElement("i");
     $(remBtnIcon).addClass("material-icons right");
     $(remBtnIcon).text("cancel");
