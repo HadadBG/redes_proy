@@ -92,54 +92,56 @@ $(document).ready(function () {
     $(btnIcon).addClass("material-icons");
     $(btnIcon).text("create");
     $(editBtn).append(btnIcon);
-
+    //mac
     $(inputField).append(input);
     $(inputField).append(label);
     $(collDiv).append(inputField);
     $(collDiv).append(editBtn);
 
-    //InputFieldR
-    var inputField = document.createElement("div");
-    $(inputField).addClass("input-field");
-    //InputR
-    var input = document.createElement("input");
-    $(input).attr({
-      disabled: "",
-      type: "text",
-      value: "xxxx.xxxx.xxxx.xxxx",
-      id: "hostRouter" + num,
-      class: "ip"
-    })
-    //LabelR
-    var label = document.createElement("label");
-    $(label).attr({
-      for: "hostRouter" + num,
-      class: "active"
-    })
-    $(label).text("Router:");
-    //ButtonR
-    var editBtn = document.createElement("button");
-    $(editBtn).addClass("secondary-content my-btnR");
-    //Button-iconR
-    var btnIcon = document.createElement("i");
-    $(btnIcon).addClass("material-icons");
-    $(btnIcon).text("create");
-    $(editBtn).append(btnIcon);
+    // //InputFieldR
+    // var inputField = document.createElement("div");
+    // $(inputField).addClass("input-field");
+    // //InputR
+    // var input = document.createElement("input");
+    // $(input).attr({
+    //   disabled: "",
+    //   type: "text",
+    //   value: "xxxx.xxxx.xxxx.xxxx",
+    //   id: "hostRouter" + num,
+    //   class: "ip"
+    // })
+    // //LabelR
+    // var label = document.createElement("label");
+    // $(label).attr({
+    //   for: "hostRouter" + num,
+    //   class: "active"
+    // })
+    // $(label).text("Router:");
+    // //ButtonR
+    // var editBtn = document.createElement("button");
+    // $(editBtn).addClass("secondary-content my-btnR");
+    // //Button-iconR
+    // var btnIcon = document.createElement("i");
+    // $(btnIcon).addClass("material-icons");
+    // $(btnIcon).text("create");
+    // $(editBtn).append(btnIcon);
+    // //router
+    // $(inputField).append(input);
+    // $(inputField).append(label);
+    // $(collDiv).append(inputField);
+    // $(collDiv).append(editBtn);
 
-    $(inputField).append(input);
-    $(inputField).append(label);
-    $(collDiv).append(inputField);
-    $(collDiv).append(editBtn);
+    // $(collItem).append(collDiv);
+    // $(collection).append(collItem);
 
-    $(collItem).append(collDiv);
-    $(collection).append(collItem);
+    // //Collectiion-item
+    // var collItem = document.createElement("li");
+    // $(collItem).addClass("collection-item");
+    // //Collection-div
+    // var collDiv = document.createElement("div");
+    // $(collDiv).addClass("my-collection");
 
-    //Collectiion-item
-    var collItem = document.createElement("li");
-    $(collItem).addClass("collection-item");
-    //Collection-div
-    var collDiv = document.createElement("div");
-    $(collDiv).addClass("my-collection");
+
     //InputField
     var inputField = document.createElement("div");
     $(inputField).addClass("input-field");
@@ -159,9 +161,9 @@ $(document).ready(function () {
       class: "active"
     })
     $(label).text("Dirección IP Fija:");
-    //Button
+    //ButtonR
     var editBtn = document.createElement("button");
-    $(editBtn).addClass("secondary-content my-btn");
+    $(editBtn).addClass("secondary-content my-btnR");
     //Button-icon
     var btnIcon = document.createElement("i");
     $(btnIcon).addClass("material-icons");
@@ -173,38 +175,38 @@ $(document).ready(function () {
     $(collDiv).append(inputField);
     $(collDiv).append(editBtn);
 
-    //InputFieldSN
-    var inputField = document.createElement("div");
-    $(inputField).addClass("input-field");
-    //InputSN
-    var input = document.createElement("input");
-    $(input).attr({
-      disabled: "",
-      type: "text",
-      value: "xxxx.xxxx.xxxx.xxxx",
-      id: "hostSNMask" + num,
-      class: "ip"
-    })
-    //LabelSN
-    var label = document.createElement("label");
-    $(label).attr({
-      for: "hostSNMask" + num,
-      class: "active"
-    })
-    $(label).text("Máscara de Subred:");
-    //ButtonSN
-    var editBtn = document.createElement("button");
-    $(editBtn).addClass("secondary-content my-btnR");
-    //Button-iconSN
-    var btnIcon = document.createElement("i");
-    $(btnIcon).addClass("material-icons");
-    $(btnIcon).text("create");
-    $(editBtn).append(btnIcon);
+    // //InputFieldSN
+    // var inputField = document.createElement("div");
+    // $(inputField).addClass("input-field");
+    // //InputSN
+    // var input = document.createElement("input");
+    // $(input).attr({
+    //   disabled: "",
+    //   type: "text",
+    //   value: "xxxx.xxxx.xxxx.xxxx",
+    //   id: "hostSNMask" + num,
+    //   class: "ip"
+    // })
+    // //LabelSN
+    // var label = document.createElement("label");
+    // $(label).attr({
+    //   for: "hostSNMask" + num,
+    //   class: "active"
+    // })
+    // $(label).text("Máscara de Subred:");
+    // //ButtonSN
+    // var editBtn = document.createElement("button");
+    // $(editBtn).addClass("secondary-content my-btnR");
+    // //Button-iconSN
+    // var btnIcon = document.createElement("i");
+    // $(btnIcon).addClass("material-icons");
+    // $(btnIcon).text("create");
+    // $(editBtn).append(btnIcon);
 
-    $(inputField).append(input);
-    $(inputField).append(label);
-    $(collDiv).append(inputField);
-    $(collDiv).append(editBtn);
+    // $(inputField).append(input);
+    // $(inputField).append(label);
+    // $(collDiv).append(inputField);
+    // $(collDiv).append(editBtn);
 
     $(collItem).append(collDiv);
     $(collection).append(collItem);
@@ -483,43 +485,64 @@ $(document).ready(function () {
   });
 });
 
+function getjson(){
+  var json_env={};
+  json_env["hosts"]={};
+  json_env["subnets"]={};
+  var kids=Object.values($("#collap").children());
+  kids.pop()//Numero de elementos en el array
+  kids.pop()//Next HTML
+  kids.shift()//Elimina el agregar host y agragar subred
+  kids.forEach(function(kid) {  
+     var tipo, nombre
+     [tipo, nombre] = $(kid).find("p").html().split(" ");
+     if(tipo == "Host:"){
+    
+      //Obtencion de datos desde el Front
+      const  host = Object.values($(kid).find("input"));
+      const mac = $(host[0]).val() //--->MAC
+      const ip = $(host[1]).val() //--->IP
 
+      //Construccion del JSON
+    json_env["hosts"][ip]={};
+    json_env["hosts"][ip]["MAC"]     = mac;
+    json_env["hosts"][ip]["nombre"]  = nombre;
+      
+     }
+     else{//subred
+        
+        //Obtencion de datos desde el Front
+        const  subred = Object.values($(kid).find("input"));
+        const ran_ini = $(subred[0]).val();//-->Rango inicial
+        const router  = $(subred[1]).val();//-->Router
+        const ran_fin = $(subred[2]).val();//-->Rango Final
+        const netmask = $(subred[3]).val();//-->Netmask
+        //Construccion del JSON
+        json_env["subnets"][nombre]={}
+        json_env["subnets"][nombre]["netmask"]     = netmask;
+        json_env["subnets"][nombre]["router"]      = router;
+        json_env["subnets"][nombre]["subnet-ini"]  = ran_ini;
+        json_env["subnets"][nombre]["subnet-fin"]  = ran_fin;
+        
+       
+     }
+     
+
+  });
+  return json_env
+}
 $(function () {
   $('#btn_sv_dhcp').bind('click', function () {
-
-    dummy_json = {
-      "subnets": {
-        "192.168.1.0": {
-          "netmask": "255.255.255.0",
-          "router": "192.168.1.254",
-          "subnet-ini": "192.168.1.10",
-          "subnet-fin": "192.168.1.100"
-        },
-        "192.168.2.0": {
-          "netmask": "255.255.255.0",
-          "router": "192.168.2.254",
-          "subnet-ini": "192.168.2.10",
-          "subnet-fin": "192.168.2.100"
-        }
-      },
-      "hosts": {
-        "192.168.1.4": {
-          "MAC": "8e:95:62:fa:e2:0d",
-          "nombre": "Anfitrion"
-        },
-        "192.168.3.3": {
-          "MAC": "08:00:27:51:ce:c1",
-          "nombre": "dns_secundario"
-        }
-      }
-    }
+    
+    var dummy_json=getjson();
+   // alert(JSON.stringify(getjson()));
     //alert("Saludos")
-    $.ajax({
+     $.ajax({
       dataType: "json",
       url: "/set_dhcp",
       data: JSON.stringify(dummy_json),
       success: function (data) {
-        alert(JSON.stringify(data));
+        alert("Configuración realizada correctamente");
       },
       processData: false,
       method: "POST"
